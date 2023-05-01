@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+
+        <!-- meta viewport tag needed to make site responsive on mobile devices https://developer.mozilla.org/en-US/docs/Web/HTML/Viewport_meta_tag -->
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <title>WCC Portfolio - Demo Page</title>
+
+        <!-- including for some global styling -->
+        <link rel="stylesheet" href="../css/style.css">
+
+    </head>
+    <body>
+        <!-- if you have sub-pages think about adding a simple back button -->
+        <nav>
+            <a href="../">HOME</a>
+        </nav>
+        <header class="documentation-header">
+            <section class="center-text">
+                <h1>Glass In the Park</h1>
+                <h2>Yining LI</h6>
+                <p>Inspired by the song of the same name, VR interactive walkthrough works</p> 
+            </section>
+        </header>
+
+        <main class="documentation-page">
+            <section>
+                <div class="responsive-video centered-content">
+                    <iframe title="vimeo-player" src="https://player.vimeo.com/video/822199441?h=795cd9096f" width="640" height="360" frameborder="0"    allowfullscreen></iframe>                </div>
+            </section>
+            <section>
+                <h3>Introduction</h3>
+                <p>This is a VR work that combines audio and visual elements, inspired by a song called "Glass in the Park". The experience I hope to provide to the viewers is a comfortable and immersive scene exploration, with interactive elements included.</p>
+            </section>
+            <section>
+                <h3>Concept and Background Research</h3>
+                
+                <p>This has intrigued me about the potential for visualizing music expression in virtual reality, which can make the experience feel more real for the user. Music and text as non-visual creative mediums provide space for imagination, but people are always inevitably generating a particular scene in their minds with every step of the character accompanied by music. Imagination is personalized, but it should not depart from the concrete things that appear in the lyrics or the atmosphere provided by the melody, whether soothing or intense. "Glass in the park" is a song that I really like as it appears to be about a person who is deeply in love and willing to do anything for their significant other.The author hides emotions within many metaphorical and abstract expressions, which also creates room for creativity in their writing. </p>
+                
+                
+               
+                
+            </section>
+            <section>
+                <h3>Technical Implementation</h3>
+
+                <p>What I envisioned was a surreal amusement park with a post-apocalyptic feel, inspired by song lyrics. The balloon pop game within the park became the primary means of interaction. First, I modeled everything in Blender, using some resources from the internet. I considered the placement of objects and modified some existing models. The weeping sculpture character was a major part, with the tears and pond shaders referencing a waterfall tutorial from YouTube. Originally, I intended to use a pre-made pond model, but I discovered that the flow of the shader needed to be coordinated with the UV texture mapping in the modeling process. </p>
+
+                <!-- example of styling for three images, you can write your own styling -->
+                <div class="flex-container flex-basis-half">
+                    <div class="flex-item">
+                        <img src="../assets/images/1.png"/>
+                    </div>
+                    <div class="flex-item">
+                        <img src="../assets/images/2.png"/>
+                    </div>
+                    
+                   
+                    
+                </div>
+                
+                
+                <p>In the scripts for shooting balloons, I initially referred to shooting tutorials on YouTube, but they were not in VR, so they used the spacebar as the trigger for shooting. I did not know what code corresponds to the Index Trigger on the controller and after searching through several tutorials, I still could not find a solution. Later, I found out from a friend that I could directly add a shoot command in the activate event of the grab script. The gun prefab needs to set the bullet firing point and bullet prefab, and the handle of the gun needs to be attached so that it can have the correct direction when picked up.</p>
+                <p>After designing the balloon, I wanted diamonds to explode from it, so I added a particle system (according to a YouTube tutorial). I also wanted it to stay on the ground for a period of time before disappearing, so I modified the parameters.</p>
+            
+                <!-- example of styling for three images, you can write your own styling -->
+                <div class="flex-container flex-basis-half">
+                    <div class="flex-item">
+                        <img src="../assets/images/3.png"/>
+                    </div>
+                    <div class="flex-item">
+                        <img src="../assets/images/4.png"/>
+                    </div>
+                </div>
+                <p>Since there are many balloons, assigning a tag to all of them would allow the bullets to hit all of the balloons. Initially, the script for the collision between the bullet and the balloon was placed on the bullet. I wanted the particle system to activate when the balloon was destroyed, but it was unable to activate. Later, I learned that it was because the particle generation location had not been specified.</p>
+
+                <!-- default flex item is for 4 & follows media query styling for home page -->
+                
+                <p>Because bullet generation is cloned, this command cannot be placed on the bullet. Therefore, I rewrote the 'BalloonExplode' script on the balloon and set the tag for the bullet prefab. In this script, the position of the particle generation is specified, and I also want the balloon to be able to regenerate after disappearing. Therefore, I need to create a method for the balloon to transmit the activation command after collision, but delay it by five seconds to prevent the problem of not being able to activate again after the object is destroyed.</p>
+                <p>All materials used in the project are sourced from Flat Kit. Additionally, animations of a Ferris wheel and swings were added to make the scene more lively.</p>
+         
+            </section>
+            <section>
+                <h3>Reflection and Future Development</h3>
+                <p>The current scene content is not yet rich enough. As an amusement park, project amenities and things that make it fun should be added. For songs-inspired works, there should be more lyrical links and richer imagination for each facility. If it is a derivative of a song, lyrics or narrative interaction from a more obvious storyline work best.
+                    Different directions, speeds, and swings would make the Ferris wheel and swing animations more realistic. There should be animation of balloons bursting during the explosion process. Diamond particles should embed in sand after falling. A radio that requires pressing down and playing while crouching is more realistic.</p>
+                <p>The current scene content is not yet rich enough. As an amusement park, project amenities and things that make it fun should be added. For songs-inspired works, there should be more lyrical links and richer imagination for each facility. If it is a derivative of a song, lyrics or narrative interaction from a more obvious storyline work best.</p>
+                <p>Different directions, speeds, and swings would make the Ferris wheel and swing animations more realistic. There should be animation of balloons bursting during the explosion process. Diamond particles should embed in sand after falling. A radio that requires pressing down and playing while crouching is more realistic.</p>
+                <p>The size ratio of the models in the environment also needs to be carefully considered. After importing from Blender to Unity, although I used real-world scale as a reference during the design process, after putting on the headset, my perception of objects is slightly different from what I saw in the modeling software. The overall size of the area is still smaller than I expected (although I hope to keep the project small in scale). This is also something to consider when making VR projects, especially for a purely fictional scene with few reference scales.</p>
+                <p>Throughout the production process, I have learned a lot. Although VR projects are fictitious, their users are human, and some sense of scale is necessary to give users a more realistic experience. What is different is that imagination and interaction that cannot be achieved in the real world can be realized in the VR world. In animation design, if set in the real world, all gravity, friction, and different interactions brought about by different materials need to be considered. Only in practice can one know that even the loss of a small detail will affect the final result.</p>
+
+            </section>
+            <section>
+                <h3>References</h3>
+                <ul>
+                    <li>AR app https://www.designboom.com/technology/vinyl-records-music-ar-app-wieden-and-kennedy-08-08-2018/</li>
+                    <li>Toxic Waterfall Effect https://www.youtube.com/watch?v=uOhWT6TxZgE</li>
+                    <li>Simple Shooting  https://www.youtube.com/watch?v=EwiUomzehKU</li>
+                    <li>VR Shooter in Unity https://www.youtube.com/watch?v=K5NkQQdteoU&t=763s</li>
+                    <li>Exploding Confetti VFX https://www.youtube.com/watch?v=qkS1ywCwSIc</li>
+                    <li>Flat Kit https://assetstore.unity.com/packages/vfx/shaders/flat-kit-toon-shading-and-water-143368</li>
+                </ul>
+            </section>
+        </main>
+
+        <footer>
+            <!-- normally information like contact details etc  -->
+            <!-- read more about semantic HTML https://www.w3schools.com/html/html5_semantic_elements.asp -->
+            
+         </footer>
+    </body>
+</html>
