@@ -90,33 +90,34 @@
                         <img src="../assets/images/4.png"/>
                     </div>
                 </div>
-                <p>Since there are many balloons, assigning a tag to all of them would allow the bullets to hit all of the balloons. Initially, the script for the collision between the bullet and the balloon was placed on the bullet. I wanted the particle system to activate when the balloon was destroyed, but it was unable to activate. Later, I learned that it was because the particle generation location had not been specified.</p>
+                
 
                 <!-- default flex item is for 4 & follows media query styling for home page -->
                 
-                <p>Because bullet generation is cloned, this command cannot be placed on the bullet. Therefore, I rewrote the 'BalloonExplode' script on the balloon and set the tag for the bullet prefab. In this script, the position of the particle generation is specified, and I also want the balloon to be able to regenerate after disappearing. Therefore, I need to create a method for the balloon to transmit the activation command after collision, but delay it by five seconds to prevent the problem of not being able to activate again after the object is destroyed.</p>
-                <p>All materials used in the project are sourced from Flat Kit. Additionally, animations of a Ferris wheel and swings were added to make the scene more lively.</p>
+                
          
             </section>
             <section>
                 <h3>Reflection and Future Development</h3>
-                <p>The current scene content is not yet rich enough. As an amusement park, project amenities and things that make it fun should be added. For songs-inspired works, there should be more lyrical links and richer imagination for each facility. If it is a derivative of a song, lyrics or narrative interaction from a more obvious storyline work best.
-                    Different directions, speeds, and swings would make the Ferris wheel and swing animations more realistic. There should be animation of balloons bursting during the explosion process. Diamond particles should embed in sand after falling. A radio that requires pressing down and playing while crouching is more realistic.</p>
-                <p>The current scene content is not yet rich enough. As an amusement park, project amenities and things that make it fun should be added. For songs-inspired works, there should be more lyrical links and richer imagination for each facility. If it is a derivative of a song, lyrics or narrative interaction from a more obvious storyline work best.</p>
-                <p>Different directions, speeds, and swings would make the Ferris wheel and swing animations more realistic. There should be animation of balloons bursting during the explosion process. Diamond particles should embed in sand after falling. A radio that requires pressing down and playing while crouching is more realistic.</p>
-                <p>The size ratio of the models in the environment also needs to be carefully considered. After importing from Blender to Unity, although I used real-world scale as a reference during the design process, after putting on the headset, my perception of objects is slightly different from what I saw in the modeling software. The overall size of the area is still smaller than I expected (although I hope to keep the project small in scale). This is also something to consider when making VR projects, especially for a purely fictional scene with few reference scales.</p>
-                <p>Throughout the production process, I have learned a lot. Although VR projects are fictitious, their users are human, and some sense of scale is necessary to give users a more realistic experience. What is different is that imagination and interaction that cannot be achieved in the real world can be realized in the VR world. In animation design, if set in the real world, all gravity, friction, and different interactions brought about by different materials need to be considered. Only in practice can one know that even the loss of a small detail will affect the final result.</p>
+                <p>As the first relatively complete VR project, I have found it challenging to balance all aspects of it. It covers modelling, scripting, material, animation, lighting, and sound, while also considering optimization and user experience. I hope to make this project as complete as possible but often find myself caught up in small details. Fortunately, I created most of the content myself and referenced many online tutorials, which gave me a lot of inspiration and helped me quickly learn new skills. Because of my familiarity and demand for scaling, I mostly used SketchUp to model and then imported to Blender or Unity, wasting a lot of time. As the most suitable 3D modelling software for Unity, I should learn more about Blender. </p>
+                <p>The scene switching is also relatively rigid, and the interactions need to be improved. The fun quotient is low, and the exploratory nature of the scene is insufficient. The positioning of the entire work is not clear enough, resulting in a lack of highlights in the finished product. While creating each interaction, I am also considering what is missing from the logic compared to more mature works, and it's only after the practice that I realize the gap. Overall, the process of creating this complete work allowed me to express what I wanted to express, and I am satisfied with the overall concept, but I need more experience to improve both visually and technically.</p>
+                
 
             </section>
             <section>
                 <h3>References</h3>
                 <ul>
-                    <li>AR app https://www.designboom.com/technology/vinyl-records-music-ar-app-wieden-and-kennedy-08-08-2018/</li>
-                    <li>Toxic Waterfall Effect https://www.youtube.com/watch?v=uOhWT6TxZgE</li>
-                    <li>Simple Shooting  https://www.youtube.com/watch?v=EwiUomzehKU</li>
-                    <li>VR Shooter in Unity https://www.youtube.com/watch?v=K5NkQQdteoU&t=763s</li>
-                    <li>Exploding Confetti VFX https://www.youtube.com/watch?v=qkS1ywCwSIc</li>
-                    <li>Flat Kit https://assetstore.unity.com/packages/vfx/shaders/flat-kit-toon-shading-and-water-143368</li>
+                    <li>[1] https://www.thechinastory.org/yearbooks/yearbook-2019-china-dreams/forum-illusions-and-transformations-the-many-meanings-of-meng-%E5%A4%A2/zhuangzi-and-his-butterfly-dream-the-etymology-of-meng-%E5%A4%A2/</li>
+                    <li>[2] The Under Presents: Tempest : https://www.youtube.com/watch?v=fSQD8DBLODE</li>
+                    <li>[3] Christophe Bruchansky; https://bruchansky.name/</li>
+                    <li>[4]Chat GPT prompt: Please write a one-man show. The main plot is that the protagonist robot dreams that he has become a human being, and gradually feels human emotions, perceives the five senses of human beings, and changes in his heart from initial doubts to gradual acceptance to enjoyment. In the first act, the robot takes the elevator to the Illusory Pavilion, ready to enter the illusion. In the second scene, the robot is in an indoor garden and walks up the bridge. He sees a butterfly, the incarnation of Zhuangzi, flying to a tree and stopping. In the third act, she enters the corridor, and the butterfly flies forward to lead it. It travels along the corridor, enters the realm of plants, and feels the wind and the photosynthesis of trees. When she came to the tree, the roots of the plant began to grow, and the electronic tree in front of her gradually grew larger. In the fourth act, it flies up and enters the dream version of the first act scene. It flies like a butterfly and circles down the spiral corridor. The lotus flowers on the ground bloom after it passes. Eventually she reached the surface, ending the journey. The text needs to be written in a stream of consciousness, and all of it is composed of short sentences. The content of the text needs to highlight the changing process of the protagonist's state of mind and perception of the environment.</li>
+                    <li>[5] Skybox Tutorial: https://igorsgames.wordpress.com/2015/05/11/how-to-change-reflection-skybox-from-script-in-unity-5/</li>
+                    <li>[6] Portal Tutorial: https://www.youtube.com/watch?v=9u3QQi6Gnx0&t=363s</li>
+                    <li>[7] Dissolving Tutorial: https://www.youtube.com/watch?v=we406Hc_WrM&t=799s</li>
+                    <li>[8] Holographic Tutorial: https://www.bilibili.com/video/BV1ce4y1W79X/?</li>
+                    <li>[9] Grow Tutorial: https://www.youtube.com/watch?v=LKaEMBLIw9s&t=880s</li>
+                    <li>[10] Flow Tutorial: https://www.youtube.com/watch?v=SA6Y3L-X0Po</li>
+                    
                 </ul>
             </section>
         </main>
